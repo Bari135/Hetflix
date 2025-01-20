@@ -1,0 +1,63 @@
+.sort-navbar {
+    background-color: #141414;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.filter-by {
+    margin-right: 20px;
+}
+
+button {
+    background-color: #e50914;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #f40612;
+}
+
+.genre-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.genre-input-container input {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.genres-list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    margin-left: 5px;
+}
+.genre-item {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 5px;
+    margin: 5px 5px 0 0;
+    border-radius: 5px;
+    
+}
+
+.rating-filter {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.rating-filter label {
+    margin-right: 10px;
+}

@@ -1,0 +1,40 @@
+
+.home {
+    background-image: url('../../images/homeBack.jpeg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: calc(200vh - 60px); 
+    padding-top: 60px; 
+
+  }
+
+.title {
+    font-size: 6em;
+    font-weight: bold;
+    color: #e50914;
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+.search-text {
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search-input {
+    width: 30%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #686767;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}

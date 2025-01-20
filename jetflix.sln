@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jetflix.Server", "jetflix.Server\jetflix.Server.csproj", "{643C614D-4C23-4A97-87E7-182BC06AE8F6}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "jetflix.client", "jetflix.client\jetflix.client.esproj", "{6E4BE3E2-B82C-46AE-B566-C17331BA12E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{643C614D-4C23-4A97-87E7-182BC06AE8F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{643C614D-4C23-4A97-87E7-182BC06AE8F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{643C614D-4C23-4A97-87E7-182BC06AE8F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{643C614D-4C23-4A97-87E7-182BC06AE8F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E4BE3E2-B82C-46AE-B566-C17331BA12E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4BE3E2-B82C-46AE-B566-C17331BA12E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4BE3E2-B82C-46AE-B566-C17331BA12E5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6E4BE3E2-B82C-46AE-B566-C17331BA12E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4BE3E2-B82C-46AE-B566-C17331BA12E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E4BE3E2-B82C-46AE-B566-C17331BA12E5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

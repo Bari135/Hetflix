@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "jetflix.Server\\jetflix.Server.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "jetflix.client\\jetflix.client.esproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

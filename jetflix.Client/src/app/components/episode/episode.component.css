@@ -1,0 +1,22 @@
+.episode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(55, 56, 56);
+  }
+  
+  .episode-info {
+    text-align: center;
+  }
+  
+  .episode-info h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .episode-info p {
+    font-size: 0.7em;
+    justify-content: space-around;
+    color: #b3b3b3;
+  }

@@ -1,0 +1,20 @@
+.episodes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .episode-card {
+    background-color: #141414;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .episode-card:hover {
+    transform: scale(1.05);
+  }

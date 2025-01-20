@@ -1,0 +1,44 @@
+
+.navbar {
+    background-color: rgb(221, 219, 217);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.5em;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.nav-item:hover {
+    color: #e50914;
+}
+
+.active {
+    color: #e50914;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

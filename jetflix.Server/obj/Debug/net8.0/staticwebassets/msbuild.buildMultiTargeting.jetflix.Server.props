@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\jetflix.Server.props" />
+</Project>

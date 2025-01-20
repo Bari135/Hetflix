@@ -1,0 +1,8 @@
+<div class="sort-bar">
+    <app-sort-bar [showsFilter]="showsFilter"></app-sort-bar>
+</div>
+<div class="shows-grid">
+    <ng-container *ngFor="let show of searchResults | showFilter:showsFilter"> 
+        <app-show [show]="show"></app-show>
+    </ng-container>
+</div>

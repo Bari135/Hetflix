@@ -1,0 +1,39 @@
+<nav class="sort-navbar">
+    <div class="filter-by">Filter by</div>
+    <button (click)="toggleGenreInput()">Genres</button>
+    <div *ngIf="showGenreInput" class="genre-input-container">
+        <input type="text" [(ngModel)]="genreInput" placeholder="Enter genre">
+        <button (click)="addGenre()">Add</button>
+    </div>
+    <div *ngIf="showsFilter.genres.length > 0" class="genres-list">
+        <div *ngFor="let genre of showsFilter.genres" class="genre-item">{{ genre }}</div>
+        <button (click)="clearGenres()">Clear Genres</button>
+    </div>
+
+    <button (click)="toggleLangeInput()">Language</button>
+    <div *ngIf="showLanguageInput" class="genre-input-container">
+        <input type="text" [(ngModel)]="languageInput" placeholder="Enter language">
+        <button (click)="addLanguage()">Add</button>
+    </div>
+    <div *ngIf="showsFilter.languages.length > 0" class="genres-list">
+        <div *ngFor="let lang of showsFilter.languages" class="genre-item">{{ lang }}</div>
+        <button (click)="clearLanguages()">Clear Genres</button>
+    </div>
+
+    <button (click)="toggleRating()">Rating</button>
+    <div *ngIf="showRatingInput" class="genre-input-container">
+        <input type="text" [(ngModel)]="ratingInput" placeholder="Enter language">
+        <button (click)="addRating()">Add</button>
+    </div>
+    <div *ngIf="showsFilter.rating > 0" class="genres-list">
+        <div class="genre-item">{{ showsFilter.rating }}</div>
+        <button (click)="clearRating()">Clear rating</button>
+    </div>
+    
+
+
+    <!-- <div class="rating-filter">
+        <label for="rating-slider">Rating: {{ showsFilter.rating }}</label>
+        <mat-slider id="rating-slider" min="0" max="10" step="1" [(ngModel)]="showsFilter.rating"></mat-slider>
+    </div> -->
+</nav>
