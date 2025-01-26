@@ -5,59 +5,55 @@
     display: flex;
     align-items: center;
     margin-top: 40px;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .filter-by {
     margin-right: 20px;
 }
 
-button {
-    background-color: #e50914;
-    color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #f40612;
-}
-
-.genre-input-container {
-    display: flex;
-    align-items: center;
-}
-
-.genre-input-container input {
-    padding: 5px;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
 .genres-list {
     display: flex;
-    flex-direction: row;
-    margin-top: 10px;
     flex-wrap: wrap;
-    margin-left: 5px;
+    max-width: 250px; 
+    background-color: white;
 }
+
 .genre-item {
-    background-color: #333333;
     color: #ffffff;
-    padding: 5px;
-    margin: 5px 5px 0 0;
-    border-radius: 5px;
-    
+    padding: 2px;
+    background-color: transparent;
+    border-radius: 2px;
+    flex: 1 1 calc(25% - 10px); 
+
 }
 
-.rating-filter {
+.filter-item {
+    margin: 10px 0;
+    background-color: white;
+}
+
+.rating-values {
     display: flex;
-    align-items: center;
-    margin-top: 10px;
+    justify-content: space-between;
+
 }
 
-.rating-filter label {
-    margin-right: 10px;
+.rating-values span {
+    font-size: 1em;
+    color:black;
+    margin: 0 5px; 
 }
+
+
+.mat-expansion-panel-header{
+    background-color: #f5f1f1;
+    color: #fefefe;
+}
+
+ 
+
+
+

@@ -12,7 +12,7 @@ import { GetShowsService } from '../../services/get-shows.service';
 })
 export class EpisodesPageComponent implements OnInit {
   episodes: Episode[] = [];
-  showId!: number;
+  showId: number = -1;
 
   constructor(private route: ActivatedRoute, private getShowsService: GetShowsService) {}
 

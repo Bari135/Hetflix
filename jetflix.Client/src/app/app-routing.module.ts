@@ -4,12 +4,14 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { EpisodesPageComponent } from './components/episodes-page/episodes-page.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'search-results', component: SearchResultsComponent },
   { path: 'episodes/:id', component: EpisodesPageComponent },
+  { path: 'favorites', component: FavoritesComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 

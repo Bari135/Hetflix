@@ -20,3 +20,16 @@
     justify-content: space-around;
     color: #b3b3b3;
   }
+  .episode-image {
+    width: 150px; /* Adjust the width as needed */
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.episode-info a {
+    color: #fdfafa;
+    text-decoration: none;
+    font-size: 1em;
+    margin-bottom: 10px;
+}

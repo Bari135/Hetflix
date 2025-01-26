@@ -1,6 +1,7 @@
 <nav class="navbar">
     <a [routerLink]="'/home'" routerLinkActive="active" class="nav-item">Home</a>
     <a [routerLink]="'/about'" routerLinkActive="active" class="nav-item">About</a>
+    <a [routerLink]="'/favorites'" routerLinkActive="active" class="nav-item">Favorites</a>
     <button class="theme-toggle" (click)="toggleTheme()">
       {{ isDarkTheme ? '☀️' : '🌙' }}
   </button>

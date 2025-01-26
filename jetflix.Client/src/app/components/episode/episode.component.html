@@ -1,7 +1,15 @@
 <div class="episode-container">
-    <img [src]="episode.image" alt="Episode Image">
+    <ng-container *ngIf="episode.image; else noImageTemplate">
+        <img [src]="episode.image" alt="Episode Image" >
+        
+    </ng-container>
+    <ng-template #noImageTemplate>
+        <div class="no-image-placeholder">
+            <img src="noImageTemplate.jpeg" alt="Episode Image" class="episode-image">
+        </div>
+    </ng-template>
     <div class="episode-info">
       <h3>{{ episode.name }}</h3>
-      <p>{{ episode.url }}</p>
+    <a [href]="episode.url" >Link</a>
     </div>
   </div>

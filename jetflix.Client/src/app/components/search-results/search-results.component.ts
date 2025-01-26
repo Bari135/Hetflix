@@ -13,15 +13,18 @@ import { filterInput } from '../../models/filterInput.model';
   styleUrl: './search-results.component.css'
 })
 export class SearchResultsComponent implements OnInit {
-  @Input() searchInput!: string;
+  @Input() searchInput: string = '';
   searchResults: Show[] = [];
-  showsFilter!: filterInput;
+  showsFilter: filterInput;
+  genres: Set<string> = new Set();
+  languages: Set<string>= new Set();
 
   constructor(private route: ActivatedRoute, private getShows: GetShowsService) {
     this.showsFilter = {
       genres: [],
       languages: [],
-      rating: 0
+      ratingMin: 0,
+      ratingMax: 10
     };
   }
 
@@ -38,12 +41,22 @@ export class SearchResultsComponent implements OnInit {
           name: item.showName,
           genres: item.generes,
           rating: item.rating,
-          image: item.image,
+          image: item.image ? item.image : 'noImageTemplate.jpeg',
           id: item.id,
           url: item.url || '',
           summary: item.summary || '',
           language: item.language || ''
         }));
+        this.loadFilters();
       });
     }
+
+    loadFilters() {
+      this.searchResults.forEach(show => {
+        show.genres?.forEach(genre => this.genres.add(genre));
+        if (show.language) {
+          this.languages.add(show.language);
+        }
+      });
   }
+}

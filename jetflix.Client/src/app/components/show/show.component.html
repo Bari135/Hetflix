@@ -1,9 +1,18 @@
-<div class="show-card" (click)="navigateToEpisodes()">
-    <img class="show-image" src="{{show.image}}" alt="Show Image">
+<div class="show-card" >
+    <img class="show-image" src="{{show.image}}" alt="Show Image" (click)="navigateToEpisodes()">
     <div class="show-info">
       <h2 class="show-title"> {{ show.name }}</h2>
       <p class="show-description">{{show.genres}}</p>
-      <p class="show-description">  {{show.rating}}</p>
+      <ng-container *ngIf="show.rating > 0; else noRatingTemplate">
+        <p class="show-description">  {{show.rating}}</p>
+    </ng-container>
+    <ng-template #noRatingTemplate>
+      <p class="show-description">  No Rating </p>
+    </ng-template>
       <p class="show-description">  {{show.language}}</p>
+      <button class="favorite-button" (click)="toggleFavorite()">
+        {{ isFavorite() ? '❤️' : '🤍' }}
+      </button>
     </div>
   </div>
+

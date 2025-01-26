@@ -1,5 +1,30 @@
 <div class="home">
     <h1 class="title">HETFLIX</h1>
     <p class="search-text">Search for a movie</p>
-    <input class="search-input" type="text" placeholder="Enter movie name" [(ngModel)]="searchInput" (keyup.enter)="searchMovie()">
+    <div class="search-container">
+        <input 
+            class="search-input" 
+            type="text" 
+            placeholder="Enter movie name" 
+            [(ngModel)]="searchInput"
+            (keyup.enter)="searchMovie()"
+            (focus)="onFocus()"
+            (blur)="onBlur()">
+        
+        <div class="search-history" *ngIf="showHistory && searchHistory.length > 0">
+            <div class="history-header">
+                <span>Recent Searches</span>
+                <button class="clear-history" (click)="clearHistory()">Clear</button>
+            </div>
+            <div class="history-items">
+                <div 
+                    *ngFor="let query of searchHistory" 
+                    class="history-item"
+                    (click)="selectHistoryItem(query)">
+                    <span class="history-icon">🕒</span>
+                    {{ query }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

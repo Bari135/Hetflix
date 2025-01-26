@@ -1,8 +1,17 @@
 <div class="sort-bar">
-    <app-sort-bar [showsFilter]="showsFilter"></app-sort-bar>
+    <app-sort-bar [showsFilter]="showsFilter" [genres]="genres" [languages]="languages"></app-sort-bar>
 </div>
+
 <div class="shows-grid">
-    <ng-container *ngFor="let show of searchResults | showFilter:showsFilter"> 
-        <app-show [show]="show"></app-show>
+    <ng-container *ngIf="searchResults.length === 0">
+        <p class="no-results-message">Sorry mate, no results - try another show.</p>
+    </ng-container>
+    <ng-container *ngIf="searchResults.length > 0">
+        <ng-container *ngIf="(searchResults | showFilter:showsFilter).length === 0">
+            <p class="no-results-message">Your filters left us with no words... or results. try to be less tough.</p>
+        </ng-container>
+        <ng-container *ngFor="let show of searchResults | showFilter:showsFilter">
+            <app-show [show]="show"></app-show>
+        </ng-container>
     </ng-container>
 </div>

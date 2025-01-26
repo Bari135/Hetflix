@@ -10,5 +10,5 @@ import { Episode } from '../../models/episode.model';
   styleUrl: './episode.component.css'
 })
 export class EpisodeComponent {
-  @Input() episode!: Episode;
+  @Input() episode: Episode = {} as Episode;
 }

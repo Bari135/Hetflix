@@ -15,7 +15,7 @@ import { filterInput } from '../models/filterInput.model';
             show.genres.some(genre => userFilterInput.genres.includes(genre));
         const languageMatch = userFilterInput.languages.length === 0 ||
             userFilterInput.languages.includes(show.language);
-        const ratingMatch = show.rating == null || show.rating >= userFilterInput.rating;
+        const ratingMatch = show.rating >= userFilterInput.ratingMin && show.rating <= userFilterInput.ratingMax;
         return genreMatch && ratingMatch && languageMatch;
       });
     }

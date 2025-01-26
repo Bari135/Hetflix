@@ -1,39 +1,76 @@
 <nav class="sort-navbar">
     <div class="filter-by">Filter by</div>
-    <button (click)="toggleGenreInput()">Genres</button>
-    <div *ngIf="showGenreInput" class="genre-input-container">
-        <input type="text" [(ngModel)]="genreInput" placeholder="Enter genre">
-        <button (click)="addGenre()">Add</button>
-    </div>
-    <div *ngIf="showsFilter.genres.length > 0" class="genres-list">
-        <div *ngFor="let genre of showsFilter.genres" class="genre-item">{{ genre }}</div>
-        <button (click)="clearGenres()">Clear Genres</button>
-    </div>
 
-    <button (click)="toggleLangeInput()">Language</button>
-    <div *ngIf="showLanguageInput" class="genre-input-container">
-        <input type="text" [(ngModel)]="languageInput" placeholder="Enter language">
-        <button (click)="addLanguage()">Add</button>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Genres</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="genres-list">
+            <div *ngFor="let genre of genres" class="genre-item">
+            <mat-checkbox
+                [(ngModel)]="selectedGenres[genre]"
+                (change)="onFilterToggle('genres', genre)">
+                {{ genre }}
+            </mat-checkbox>
+            </div>
     </div>
-    <div *ngIf="showsFilter.languages.length > 0" class="genres-list">
-        <div *ngFor="let lang of showsFilter.languages" class="genre-item">{{ lang }}</div>
-        <button (click)="clearLanguages()">Clear Genres</button>
-    </div>
-
-    <button (click)="toggleRating()">Rating</button>
-    <div *ngIf="showRatingInput" class="genre-input-container">
-        <input type="text" [(ngModel)]="ratingInput" placeholder="Enter language">
-        <button (click)="addRating()">Add</button>
-    </div>
-    <div *ngIf="showsFilter.rating > 0" class="genres-list">
-        <div class="genre-item">{{ showsFilter.rating }}</div>
-        <button (click)="clearRating()">Clear rating</button>
-    </div>
+        <button
+          mat-raised-button
+          *ngIf="showsFilter.genres.length > 0"
+          (click)="clearFilter('genres')">
+          Clear Genres
+        </button>
+      </mat-expansion-panel>
     
 
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Languages</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="genres-list">
+        <div *ngFor="let language of languages" class="filter-item">
+          <mat-checkbox
+            [(ngModel)]="selectedLanguages[language]"
+            (change)="onFilterToggle('languages',language)">
+            {{ language }}
+          </mat-checkbox>
+        </div>
+        </div>
 
-    <!-- <div class="rating-filter">
-        <label for="rating-slider">Rating: {{ showsFilter.rating }}</label>
-        <mat-slider id="rating-slider" min="0" max="10" step="1" [(ngModel)]="showsFilter.rating"></mat-slider>
-    </div> -->
-</nav>
+    
+        <button
+          mat-raised-button
+          
+          *ngIf="showsFilter.languages.length > 0"
+          (click)="clearFilter('languages')">
+          Clear Languages
+        </button>
+      </mat-expansion-panel>
+
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Rating</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="filter-item">
+              <mat-slider min="0" max="10" step="1" thumbLabel tickInterval="1" aria-label="Rating slider">
+                <input matSliderStartThumb [(ngModel)]="showsFilter.ratingMin" />
+                <input matSliderEndThumb [(ngModel)]="showsFilter.ratingMax"  />
+              </mat-slider>
+              <div class="rating-values">
+                <span>Min: {{ showsFilter.ratingMin }}</span>
+                <span>Max: {{ showsFilter.ratingMax }}</span>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+      <button
+          mat-raised-button
+          color="primary"
+          *ngIf="showsFilter.languages.length > 0 || showsFilter.genres.length > 0 ||
+           showsFilter.ratingMin > 0 || showsFilter.ratingMax < 10"
+          (click)="clearAllFilters()">
+          Clear All Filters
+        </button>
+</nav> 
+

@@ -1,0 +1,9 @@
+<div class="favorites-container">
+    <h2>My Favorite Shows</h2>
+    <div class="shows-grid" *ngIf="favoriteShows.length > 0">
+      <app-show *ngFor="let show of favoriteShows" [show]="show"></app-show>
+    </div>
+    <div class="no-favorites" *ngIf="favoriteShows.length === 0">
+      <p>You haven't added any shows to your favorites yet.</p>
+    </div>
+  </div>

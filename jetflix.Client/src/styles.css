@@ -27,6 +27,3 @@ body {
     background-color: var(--navbar-bg);
 }
 
-.show-card, .episode-card {
-    background-color: var(--card-bg);
-}

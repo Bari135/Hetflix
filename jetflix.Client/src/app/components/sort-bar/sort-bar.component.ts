@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { filterInput } from '../../models/filterInput.model';
+
 
 @Component({
   selector: 'app-sort-bar',
@@ -9,55 +10,46 @@ import { filterInput } from '../../models/filterInput.model';
   styleUrl: './sort-bar.component.css'
 })
 export class SortBarComponent {
-  showGenreInput: boolean = false;
-  showLanguageInput: boolean = false
-  showRatingInput: boolean = false;
-  genreInput: string = '';
-  languageInput: string = '';
-  ratingInput: number = 0;
-  @Input() showsFilter!: filterInput;
 
-  toggleGenreInput() {
-    this.showGenreInput = !this.showGenreInput;
-  }
-  toggleLangeInput() {
-    this.showLanguageInput = !this.showLanguageInput;
-  }
+  @Input() showsFilter: filterInput = {} as filterInput;
+  @Input() genres: Set<string> = new Set<string>(); 
+  @Input() languages: Set<string> = new Set<string>();
 
-  toggleRating(){
-    this.showRatingInput = !this.showRatingInput;
-  }
 
-  addGenre() {
-    if (this.genreInput.trim()) {
-      this.showsFilter.genres.push(this.genreInput.trim());
-      this.genreInput = '';
+  selectedGenres: { [key: string]: boolean } = {};
+  selectedLanguages: { [key: string]: boolean } = {};
 
-    }
-  }
-  clearGenres() {
-    this.showsFilter.genres = [];
-    
-  }
-
-  addLanguage() {
-    if (this.languageInput.trim()) {
-      this.showsFilter.languages.push(this.languageInput.trim());
-      this.languageInput = '';
-    }
-  }
-  clearLanguages(){
-    this.showsFilter.languages = [];
-  }
-
-  addRating() {
-    if (this.ratingInput > 0 && this.ratingInput <= 10) {
-      this.showsFilter.rating = this.ratingInput;
-      this.ratingInput = 0;
+  onFilterToggle(filterName: 'genres' | 'languages', key: string) {
+    if (filterName === 'genres' ? this.selectedGenres[key] : this.selectedLanguages[key]) {
+      if (!this.showsFilter[filterName].includes(key)) {
+        this.showsFilter[filterName].push(key);
+      }
+    } else {
+      this.showsFilter[filterName] = this.showsFilter[filterName].filter(item => item !== key);
     }
   }
 
-  clearRating(){
-    this.showsFilter.rating = 0;
+
+  clearFilter(filterName: 'genres' | 'languages' | 'rating') {
+    if (filterName === 'genres') {
+      this.showsFilter.genres = [];
+      this.selectedGenres = {};
+    } else if (filterName === 'languages') {
+      this.showsFilter.languages = [];
+      this.selectedLanguages = {};
+    } else {
+      this.showsFilter.ratingMin = 0;
+      this.showsFilter.ratingMax = 10;
+    }
   }
+
+  
+
+  clearAllFilters() {
+    this.clearFilter('genres');
+    this.clearFilter('languages');
+    this.clearFilter('rating');
+  }
+
 }
+

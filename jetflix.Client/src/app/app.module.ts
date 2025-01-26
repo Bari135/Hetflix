@@ -16,6 +16,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { EpisodesPageComponent } from './components/episodes-page/episodes-page.component';
 import { EpisodeComponent } from './components/episode/episode.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +32,17 @@ import { EpisodeComponent } from './components/episode/episode.component';
     SortBarComponent,
     FilterPipe,
     EpisodesPageComponent,
-    EpisodeComponent
+    EpisodeComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule, FormsModule,
     MatSliderModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    MatCheckboxModule,
+    MatButtonModule
   ],
   providers: [
     provideAnimationsAsync()
